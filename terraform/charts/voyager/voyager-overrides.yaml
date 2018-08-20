@@ -1,0 +1,12 @@
+# THIS FILE IS A DEMO OF WHAT IS ACTUALLY REFERENCED
+# FROM THE CI/CD SERVER
+
+tolerations: {
+  key: "voyager"
+  operator: "Equal"
+  value: "false"
+  effect: "NoSchedule"
+}
+
+apiserver:
+  ca: <CERTIFICATE GOES HERE>

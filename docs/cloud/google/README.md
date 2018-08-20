@@ -1,0 +1,1 @@
+This is the instruction set for installing on google's gke. see create.sh

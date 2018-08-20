@@ -1,0 +1,71 @@
+#-----------------------------#
+#           global            #
+#-----------------------------#
+export TF_VAR_debug="true"
+
+#-----------------------------#
+#       google-provider       #
+#-----------------------------#
+export TF_VAR_google_credentials="$(cat ${HOME}/Terraform.json)"
+export TF_VAR_project="codedepot-211600"
+export TF_VAR_region="us-central1"
+export TF_VAR_zone="us-central1-f"
+
+
+#-----------------------------#
+#     bastion-node-pool       #
+#-----------------------------#
+export TF_VAR_bastion_pool_name="voyager"
+export TF_VAR_bastion_count="1"
+export TF_VAR_bastion_pool_min_count="1"
+export TF_VAR_bastion_pool_max_count="3"
+export TF_VAR_auto_repair="true"
+export TF_VAR_auto_upgrade="true"
+export TF_VAR_bastion_disk_size_gb="10"
+export TF_VAR_bastion_disk_type="pd-standard"
+export TF_VAR_bastion_machine_type="n1-standard-1"
+export TF_VAR_bastion_pool_preemptible="true"
+export TF_VAR_tags='["bastion"]'
+export TF_VAR_oauth_scopes='["compute-rw", "storage-ro"]'
+export TF_VAR_taint='{key="voyager", value=false, effect="NO_SCHEDULE"}'
+
+
+#-----------------------------#
+#     istio-node-pool         #
+#-----------------------------#
+export TF_VAR_istio_pool_name="istio"
+export TF_VAR_cluster_name="cluster01"
+export TF_VAR_istio_pool_count="3"
+export TF_VAR_istio_pool_min_count="3"
+export TF_VAR_istio_pool_max_count="30"
+export TF_VAR_istio_disk_size_gb="10"
+export TF_VAR_istio_disk_type="pd-standard"
+export TF_VAR_istio_image_type="cos-stable"
+export TF_VAR_istio_pool_preemptible="true"
+export TF_VAR_istio_machine_type="n1-standard-1"
+
+
+#-----------------------------#
+#   google_container_cluster  #
+#-----------------------------#
+export TF_VAR_cluster_name="cluster01"
+
+
+
+#-----------------------------#
+#       voyager-provider      #
+#-----------------------------#
+export TF_VAR_alias="voyager"
+export TF_VAR_chart_source_type="repository"
+export TF_VAR_chart_source="https://github.com/appscode/voyager/tree/master/chart/voyager"
+export TF_VAR_kube_context="default"
+
+
+#-----------------------------#
+#       voyager-resource      #
+#-----------------------------#
+export TF_VAR_name="voyager"
+export TF_VAR_chart_name="voyager"
+export TF_VAR_chart_version="7.4.0"
+export TF_VAR_namespace="kube-system"
+export TF_VAR_overrides="$(cat ${HOME}/.terraform.d/modules/helmcmd/voyager/voyager-overrides.yaml)"
