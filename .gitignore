@@ -1,6 +1,5 @@
-# Compiled files
-*.tfstate
-*.tfstate.backup
+#  Local .terraform directories
+**/.terraform/*
 
 # Module directory
 .terraform/
@@ -10,4 +9,8 @@
 
 # Generated Plan File
 *.plan
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
 
