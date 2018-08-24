@@ -4,3 +4,10 @@
 
 # Module directory
 .terraform/
+
+# Environment Variables
+*terraform-env-vars
+
+# Generated Plan File
+*.plan
+
