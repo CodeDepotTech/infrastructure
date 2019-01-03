@@ -3,17 +3,11 @@
 pipeline: 
   terraform:
     image: jmcann/drone-terraform:latest
-    plan: false
     sensitive: true
     root_dir: terraform
+    
     # remove these actions for deployment
     actions:
       - validate
       - plan
-    vars:
-      project:                ${TF_VAR_project}
-      region:                 ${TF_VAR_region}
-      zone:                   ${TF_VAR_zone}
-      credentials_file_path:  ${TF_VAR_credentials_file_path} 
-      machine_type:           n1-standard-1
         

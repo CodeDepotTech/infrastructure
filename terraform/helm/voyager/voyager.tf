@@ -2,9 +2,9 @@
 resource "helmcmd_release" "voyager" {
   #provider = "${var.provider}"
   provider = "helmcmd.voyager"
-  name = "${var.name}"
-  chart_name = "${var.chart_name}"
-  chart_version = "${var.chart_version}"
-  namespace = "${var.namespace}"
-  overrides = "${var.overrides}"
+  name = "${var.helm_voyager_name}"
+  chart_name = "${var.helm_voyager_chart_name}"
+  chart_version = "${var.helm_voyager_chart_version}"
+  namespace = "${var.helm_voyager_namespace}"
+  overrides = "${var.helm_voyager_overrides}"
 }
