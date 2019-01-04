@@ -1,8 +1,0 @@
-{
-  "generator-terraform-environments": {
-    "promptValues": {
-      "environments": "dev,prod",
-      "components": "gke,voyager"
-    }
-  }
-}
